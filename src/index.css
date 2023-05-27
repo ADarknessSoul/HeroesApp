@@ -1,0 +1,50 @@
+.overlay {
+
+    max-height: 500px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    overflow: hidden;
+
+}
+
+.overlay-image img {
+
+    max-width: 100%;
+    height: auto;
+
+}
+
+.semi-rounded {
+
+    border-end-end-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+
+}
+
+.form {
+
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #f7f7f9;
+    border-width: 3px;
+
+}
+
+.small {
+
+    font-size: 0.700em;
+
+}
+
+
+@media (min-width: 768px) {
+    
+    .overlay-image {
+
+        width: 300px;
+    
+    }
+    
+
+}

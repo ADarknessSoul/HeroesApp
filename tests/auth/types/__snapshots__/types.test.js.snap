@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en types.js Debe regresar los types iniciales 1`] = `
+{
+  "login": "[Auth] Login",
+  "logout": "[Auth] Logout",
+}
+`;
