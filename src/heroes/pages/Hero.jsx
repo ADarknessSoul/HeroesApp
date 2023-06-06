@@ -1,11 +1,13 @@
-import { useMemo } from "react";
+import { useContext, useMemo } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom"
 import { collection, onSnapshot, query, where, doc, updateDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { useEffect, useState } from "react";
+import { AuthContext } from "../../auth";
 
 export const Hero = () => {
   
+  const { user } = useContext(AuthContext);
   const [heroesList, setHeroesList] = useState([]);
   const heroesCollectionRef = collection(db, "heroes");
 
@@ -107,7 +109,7 @@ export const Hero = () => {
 
           <div>
 
-            <img src="/public/heroes/trophy.jpg" alt="trophy" width="300px" height="300px"/>
+            <img src="/heroes/trophy.jpg" alt="trophy" width="300px" height="300px"/>
 
           </div>
 
@@ -115,34 +117,69 @@ export const Hero = () => {
 
             <h3 className="h3 text-muted" style={{margin: "0 auto"}}>Comic: <span className="h4 text-secondary">{heroesList[0].bestComic.comicName}</span></h3>
 
-            <div className="container border mt-3 p-3 mb-2">
+            {
 
-              <label htmlFor="updateComicName">Nombre del comic:</label>
-              <input type="text" className="form-control" onChange={(e) => setUpdatedComicName(e.target.value)}/>
-              <button className="btn btn-warning col-12 mt-2" onClick={() => updateHeroeTitle(heroesList[0].id)}>Actualizar</button>
+              user.admin ? (
 
-            </div>
+                <div className="container border mt-3 p-3 mb-2">
+
+                  <label htmlFor="updateComicName">Nombre del comic:</label>
+                  <input type="text" className="form-control" onChange={(e) => setUpdatedComicName(e.target.value)}/>
+                  <button className="btn btn-warning col-12 mt-2" onClick={() => updateHeroeTitle(heroesList[0].id)}>Actualizar</button>
+  
+                </div>
+
+              ) : (
+
+                <></>
+
+              )
+
+            }
             
             <h3 className="h3 text-muted" style={{margin: "0 auto"}}>Author: <span className="h4 text-secondary">{heroesList[0].bestComic.comicAuthor}</span></h3>
 
-            
-            <div className="container border mt-3 p-3 mb-2">
+            {
 
-              <label htmlFor="updateComicAuthor">Nombre del autor:</label>
-              <input type="text" className="form-control" onChange={(e) => setUpdatedComicAuthor(e.target.value)}/>
-              <button className="btn btn-warning col-12 mt-2" onClick={() => updateHeroeAuthor(heroesList[0].id)}>Actualizar</button>
+              user.admin ? (
 
-            </div>
+                <div className="container border mt-3 p-3 mb-2">
+
+                  <label htmlFor="updateComicAuthor">Nombre del autor:</label>
+                  <input type="text" className="form-control" onChange={(e) => setUpdatedComicAuthor(e.target.value)}/>
+                  <button className="btn btn-warning col-12 mt-2" onClick={() => updateHeroeAuthor(heroesList[0].id)}>Actualizar</button>
+    
+                </div>
+
+              ) : (
+
+                <></>
+
+              )
+
+            }
 
             <h3 className="h3 text-muted" style={{margin: "0 auto"}}>Release date: <span className="h4 text-secondary">{heroesList[0].bestComic.comicDate}</span></h3>
 
-            <div className="container border mt-3 p-3 mb-2">
+            {
 
-              <label htmlFor="updateComicDate">Fecha de estreno:</label>
-              <input type="number" className="form-control" onChange={(e) => setUpdatedComicDate(Number(e.target.value))}/>
-              <button className="btn btn-warning col-12 mt-2" onClick={() => updateHeroeDate(heroesList[0].id)}>Actualizar</button>
+              user.admin ? (
 
-            </div>
+                <div className="container border mt-3 p-3 mb-2">
+
+                  <label htmlFor="updateComicDate">Fecha de estreno:</label>
+                  <input type="number" className="form-control" onChange={(e) => setUpdatedComicDate(Number(e.target.value))}/>
+                  <button className="btn btn-warning col-12 mt-2" onClick={() => updateHeroeDate(heroesList[0].id)}>Actualizar</button>
+  
+                </div>
+
+              ) : (
+
+                <></>
+
+              )
+
+            }
 
           </div>
 

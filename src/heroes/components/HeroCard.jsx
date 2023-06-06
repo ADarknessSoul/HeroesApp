@@ -2,10 +2,14 @@ import { Link } from "react-router-dom";
 import './HeroCard.css';
 import { deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
+import { useContext } from "react";
+import { AuthContext } from "../../auth";
 
 export const HeroCard = ({Hero, withoutButton = false}) => {
 
   const heroURL=`/heroes/${Hero.heroId}.jpg`;
+
+  const { user } = useContext(AuthContext);
 
   const { userNames, superHero, firstAppearance, alterEgo } = Hero.character;
 
@@ -60,7 +64,7 @@ export const HeroCard = ({Hero, withoutButton = false}) => {
 
       {
 
-        withoutButton ? ( 
+        withoutButton || !user.admin ? ( 
 
           <></>
 

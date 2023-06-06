@@ -22,7 +22,7 @@ export const AuthProvider = ({children}) => {
 
   const Login = (name = "") => {
 
-    const user = { id: 'ABC', name};  
+    const user = { id: 'ABC', name, admin: false,};  
 
     const action = {
 
@@ -31,6 +31,7 @@ export const AuthProvider = ({children}) => {
 
         id: 'ABC',
         name,
+        admin: false,
 
       }
 
@@ -55,13 +56,71 @@ export const AuthProvider = ({children}) => {
 
   }
 
+  const adminLogin = () => {
+
+    let user = JSON.parse(localStorage.getItem("user"));
+
+    user = {
+
+      ...user,
+      admin: true,
+
+    }
+
+    const action = {
+
+      type: types.Admin,
+      payload: {
+
+        ...user,
+        admin: true,
+
+      }
+
+    }
+
+    localStorage.setItem('user', JSON.stringify(user));
+    dispatch(action);
+
+  }
+
+  const adminLogout = () => {
+
+    let user = JSON.parse(localStorage.getItem("user"));
+
+    user = {
+
+      ...user,
+      admin: false,
+
+    }
+
+    const action = {
+
+      type: types.Admin,
+      payload: {
+
+        ...user,
+        admin: false,
+
+      }
+
+    }
+
+    localStorage.setItem('user', JSON.stringify(user));
+    dispatch(action);
+
+  }
+
   return (
     
     <AuthContext.Provider value={{
 
       ...authState,
       Login,
-      Logout
+      Logout,
+      adminLogin,
+      adminLogout
 
     }}>
 

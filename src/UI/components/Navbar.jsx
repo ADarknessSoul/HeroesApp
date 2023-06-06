@@ -6,7 +6,7 @@ export const Navbar = () => {
 
     const navigate = useNavigate(); //CustomHook para entrar en el Navigation Provider 
 
-    const { user, Logout } = useContext(AuthContext);
+    const { user, Logout, adminLogin, adminLogout} = useContext(AuthContext);
 
     const onLogout = () => {
 
@@ -17,6 +17,20 @@ export const Navbar = () => {
             replace: true,
 
         });
+
+    }
+
+    const onAdmin = () => {
+
+        if(!user.admin) {
+
+            adminLogin();
+
+        } else {
+
+            adminLogout();
+
+        }
 
     }
 
@@ -56,11 +70,46 @@ export const Navbar = () => {
                         >
                             Search
                         </NavLink>
+
+                        {/* Se muestra el link hacia el administrador de manera condicional al registro de admin */}
+
+                        {
+
+                            user.admin ? (
+
+                                <NavLink 
+                                to="/admin"
+                                className={({isActive}) => `nav-item nav-link ${isActive ? 'active' : ''}`}
+                                end
+                                >
+                                    Crear
+                                </NavLink>
+
+                            ) : (
+
+                                <></>
+
+                            )
+
+                        }
+
+
                     </div>
                 </div>
 
                 <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
                     <ul className="navbar-nav ml-auto">
+
+                        
+                        <button
+                            data-testid="btn-logout"
+                            className='nav-item nav-link btn'
+                            onClick={onAdmin}
+                        >
+
+                            { user.admin ? ("Administrator") : ("User") }
+
+                        </button>
 
                         <span className='nav-item nav-link text-primary'>
 
