@@ -113,7 +113,7 @@ export const Hero = () => {
 
           <div className="d-flex mb-4 flex-column align-items-start p-3">
 
-            <h3 className="h3 text-muted" style={{marginLeft: "400px"}}>Comic: <span className="h4 text-secondary">{heroesList[0].bestComic.comicName}</span></h3>
+            <h3 className="h3 text-muted" style={{margin: "0 auto"}}>Comic: <span className="h4 text-secondary">{heroesList[0].bestComic.comicName}</span></h3>
 
             <div className="container border mt-3 p-3 mb-2">
 
@@ -123,7 +123,7 @@ export const Hero = () => {
 
             </div>
             
-            <h3 className="h3 text-muted" style={{marginLeft: "400px"}}>Author: <span className="h4 text-secondary">{heroesList[0].bestComic.comicAuthor}</span></h3>
+            <h3 className="h3 text-muted" style={{margin: "0 auto"}}>Author: <span className="h4 text-secondary">{heroesList[0].bestComic.comicAuthor}</span></h3>
 
             
             <div className="container border mt-3 p-3 mb-2">
@@ -134,7 +134,7 @@ export const Hero = () => {
 
             </div>
 
-            <h3 className="h3 text-muted" style={{marginLeft: "400px"}}>Release date: <span className="h4 text-secondary">{heroesList[0].bestComic.comicDate}</span></h3>
+            <h3 className="h3 text-muted" style={{margin: "0 auto"}}>Release date: <span className="h4 text-secondary">{heroesList[0].bestComic.comicDate}</span></h3>
 
             <div className="container border mt-3 p-3 mb-2">
 
