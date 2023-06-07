@@ -36,7 +36,7 @@ export const Navbar = () => {
 
     return (
         <>
-            <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-2">
+            <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-2 sticky-top">
                 
                 <Link 
                     className="navbar-brand" 
