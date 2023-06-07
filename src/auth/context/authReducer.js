@@ -21,6 +21,14 @@ export const authReducer = (state = {}, action) => {
             
             };
 
+        case types.Admin: 
+            return {
+
+                ...state,
+                user: action.payload,
+
+            };
+
         default:
             return state;
 
