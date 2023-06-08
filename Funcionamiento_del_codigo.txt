@@ -1,0 +1,16 @@
+Descripción del proyecto:
+La implementación de este proyecto se hace mediante el uso de react-router-dom6 y hooks como useContext, así como useReducer.
+En la implementación práctica del CRUD hay algunas partes principales que constituyen el funcionamiento del mismo, utilizando firebase:
+1. El archivo de configuración para firebase que se encuentra en la ruta /src/config/firebase.js. Este provee los valores necesarios para conectarse a la base de datos
+así como proveer los métodos para emplear todas la operaciones del CRUD.
+2. En el caso para crear un registro en base de datos se hace desde la ruta: /src/heroes/pages/Admin.jsx. Este componente solo está habilitado si el usuario presiona
+un botón de la barra de navegación para entrar al modo administrador. Dentro del componente existe un formulario que corresponde a los campos de la base de datos en firebase,
+y una vez se envían, el registro se crea mediante el método addDoc que le provee la información a firebase para crear un nuevo documento. En este caso se trató de implementar
+el guardado de imagenes mediante un input que permite subir los mismos, pero para realizar esta operación se requiere tener un servidor corriendo desde el lado del servidor, por 
+lo que imposibilita la aplicación de esta función.
+3. Para borrar los registros, cuando se crean las tarjetas de cada uno de los heroes extraidos desde firebase, también se les crea un botón para eliminar el registro que solo
+puede ser visto en modo administrador. Este componente se encuentra en la ruta /src/heroes/components/HeroCard.jsx. Cuando se presiona el botón para eliminar se llama la función
+deleteDoc, a la cual se le envía el doc especificado anteriormente. De esta manera firebase elimina el registro de la base de datos.
+4. Para actualizar los registros se hace mediante el método updateDoc, a la cual, de manera parecida a borrar un registro, se le envía el doc especificado para que lo encuentre dentro
+de la base de datos y pueda actualizarlo.
+Con todas estas acciones se consigue un CRUD funcional utilizando React 18.2 y firebase con firestore.
