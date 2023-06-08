@@ -71,59 +71,70 @@ export const Admin = () => {
 
             <>
                    
-        <h2 class= "text-center">Agregar un nuevo comic de superhéroes</h2>
-        <div class="text-cente" >
+        <h2 class= "text-center formulario_title ">Agregar un nuevo comic de superhéroes</h2>
+        <div class="text-center formulario_container" >
 
-            <form class = "row ">
-                    
-                 <div class="col-6">
-                    <label for="autor" class = "form-label">Autor:</label>
-                    <input type="text" className= "form-control" id="autor" name="autor" required onChange={(e) => setCreateComicAuthor(e.target.value)}></input>
+            <form class = "formulario ">
+
+                <div class="formulario_group">
+                            <h4 class="formulario_title formulario_labelA" > Best Comic </h4>
+                </div>
+
+                 <div class="formulario_group">
+                    <label for="autor" class = "formulario_label">Autor:</label>
+                    <input type="text" className= "formulario_input" id="autor" name="autor" required onChange={(e) => setCreateComicAuthor(e.target.value)}></input>
                  </div>
          
                 
-                <div class="col-6">
-                    <label for="fecha_lanzamiento" class = "form-label" >Fecha de Lanzamiento:</label>
-                    <input type="number"  class="form-control" id="fecha_lanzamiento" name="fecha_lanzamiento" required onChange={(e) => setCreateComicDate(Number(e.target.value))}></input>
+                <div class="formulario_group">
+                    <label for="fecha_lanzamiento" class = "formulario_labelA" >Fecha de Lanzamiento:</label>
+                    <input type="number"  class="formulario_input" id="fecha_lanzamiento" name="fecha_lanzamiento" required onChange={(e) => setCreateComicDate(Number(e.target.value))}></input>
                 </div>
 
-                <div class="col-6">
-                    <label for="titulo" class = "form-label" >Título del Comic:</label>
-                    <input type="text" class="form-control" id="titulo" name="titulo" required onChange={(e) => setCreateComicName(e.target.value)}></input>
+                <div class="formulario_group">
+                    <label for="titulo" class = "formulario_labelA" >Título del Comic:</label>
+                    <input type="text" class="formulario_input" id="titulo" name="titulo" required onChange={(e) => setCreateComicName(e.target.value)}></input>
                 </div>
 
-                <div class="col-6">
-                    <label for="identidad_secreta" class = "form-label">Identidad Secreta:</label>
-                    <input type="text" class="form-control"  id="identidad_secreta" name="identidad_secreta" required onChange={(e) => setCreateAlterEgo(e.target.value)}></input>
+                  
+              
+              <div class="formulario_group">
+                        <h4 class="text-center mt-5" > Data of heroes </h4>
+              </div>
+
+                <div class="formulario_group">
+                   
+                    <label for="identidad_secreta" class = "formulario_labelA">Identidad Secreta:</label>
+                    <input type="text" class="formulario_input"  id="identidad_secreta" name="identidad_secreta" required onChange={(e) => setCreateAlterEgo(e.target.value)}></input>
                 </div>
 
-                <div class="form-outline">
-                    <label for="primera_aparicion" class = "form-label">Primera Aparición:</label>
-                    <input type="text"  class="form-control" id="primera_aparicion" name="primera_aparicion" required onChange={(e) => setCreateFirstAppearance(e.target.value)}></input>
+                <div class="formulario_group">
+                    <label for="primera_aparicion" class = "formulario_labelA">Primera Aparición:</label>
+                    <input type="text"  class="formulario_input" id="primera_aparicion" name="primera_aparicion" required onChange={(e) => setCreateFirstAppearance(e.target.value)}></input>
                 </div>
 
-                <div class="form-outline">
-                    <label for="nombre_heroe" class = "form-label">Nombre de Héroe:</label>
-                    <input type="text" class="form-control"  id="nombre_heroe" name="nombre_heroe" required onChange={(e) => setCreateSuperHero(e.target.value)}></input>
+                <div class="formulario_group">
+                    <label for="nombre_heroe" class = "formulario_labelA">Nombre de Héroe:</label>
+                    <input type="text" class="formulario_input"  id="nombre_heroe" name="nombre_heroe" required onChange={(e) => setCreateSuperHero(e.target.value)}></input>
                 </div>
 
-                <div class="form-outline">
-                    <label for="anteriores_identidades" class = "form-label" >Anteriores Identidades Secretas:</label>
-                    <input type="text" class="form-control" id="anteriores_identidades" name="anteriores_identidades" required onChange={(e) => setCreateUserNames(e.target.value)}></input>
+                <div class="formulario_group">
+                    <label for="anteriores_identidades" class = "formulario_labelA" >Anteriores Identidades Secretas:</label>
+                    <input type="text" class="formulario_input" id="anteriores_identidades" name="anteriores_identidades" required onChange={(e) => setCreateUserNames(e.target.value)}></input>
                 </div>
 
-                <div class="form-outline">
-                    <label for="id" class = "form-label" >Id heroe:</label>
-                    <input type="text" class="form-control" id="id" name="id" required onChange={(e) => setCreateHeroId(e.target.value)}></input>
+                <div class="formulario_group">
+                    <label for="id" class = "formulario_labelA" >Id heroe:</label>
+                    <input type="text" class="formulario_input" id="id" name="id" required onChange={(e) => setCreateHeroId(e.target.value)}></input>
                 </div>
 
-                <div class="form-outline">
-                    <label for="publisher" class = "form-label" >Publisher:</label>
-                    <input type="text"  class="form-control"  id="publisher" name="publisher" required onChange={(e) => setCreatePublisher(e.target.value)}></input>
+                <div class="formulario_group">
+                    <label for="publisher" class = "formulario_labelA" >Publisher:</label>
+                    <input type="text"  class="formulario_input"  id="publisher" name="publisher" required onChange={(e) => setCreatePublisher(e.target.value)}></input>
                 </div>
 
                 <div class = "modal-footer pt-4">
-                <input  type="button" class = " btn btn-dark mx-auto w-50 " onClick={onSubmitHeroe} value="Guardar"></input>
+                     <input  type="button" class = " formulario-submit mx-auto w-50 " onClick={onSubmitHeroe} value="Guardar"></input>
                 </div>
                     
             </form>
