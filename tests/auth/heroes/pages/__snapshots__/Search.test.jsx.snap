@@ -3,19 +3,19 @@
 exports[`Pruebas en <Search/> Debe de mostrarse correctamente con valores por defecto 1`] = `
 <div>
   <h1
-    class="text-center text-uppercase"
+    className="text-center text-uppercase"
   >
     Heroes database
   </h1>
   <hr />
   <div
-    class="row"
+    className="row"
   >
     <div
-      class="col-sm-5"
+      className="col-sm-5"
     >
       <h2
-        class="h2"
+        className="h2"
       >
         Searching
       </h2>
@@ -25,14 +25,14 @@ exports[`Pruebas en <Search/> Debe de mostrarse correctamente con valores por de
       >
         <input
           autocomplete="off"
-          class="form-control"
+          className="form-control"
           name="searchText"
           placeholder="Example: Wonder Woman"
           type="text"
           value=""
         />
         <button
-          class="btn btn-outline-primary mt-2"
+          className="btn btn-outline-primary mt-2"
         >
           Search
         </button>
@@ -40,20 +40,20 @@ exports[`Pruebas en <Search/> Debe de mostrarse correctamente con valores por de
     </div>
      
     <div
-      class="col-sm-7"
+      className="col-sm-7"
     >
       <h2>
         Results
       </h2>
       <hr />
       <div
-        class="alert alert-primary"
+        className="alert alert-primary"
         data-testid="SearchaHero"
       >
         Search a hero
       </div>
       <div
-        class="alert alert-danger"
+        className="alert alert-danger"
         data-testid="errorHero"
         style="display: none;"
       >

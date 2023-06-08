@@ -125,17 +125,17 @@ export const Search = () => {
 
           {
 
-            heroesList.map( Hero => (
+            Object.keys(heroesList).length > 0 ? (
+              heroesList.map( Hero => (
 
               <HeroCard key={Hero.heroId} Hero={Hero} withoutButton={true}/>
 
             ))
+          ) : (
 
-          }
+            <></>
 
-          {
-
-            console.log(heroesList)
+          )
 
           }
 

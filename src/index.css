@@ -50,7 +50,8 @@
 }
 
 .formulario{
-    background-color: #fff;
+    background: rgb(144,60,149);
+background: radial-gradient(circle, rgba(144,60,149,0.560749299719888) 0%, rgba(25,179,180,0.9781162464985994) 96%);
     margin: auto;
     width: 90%;
     max-width: 400px;
@@ -79,13 +80,13 @@
 
 .formulario_group{
     position: relative;
-    color: #575757;
+    color: #0F0F0F;
 }
 
 .formulario_input{
     width: 100%;
     background: none;
-    color: #706c6c;
+    color: #0F0F0F;
     font-size: 1rem;
     padding: .6em  .3em;
     border: none;
@@ -113,3 +114,17 @@
     margin-top: 1.5rem;
 
 }
+
+input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    color: #fff;
+    padding: 10px;
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Style for inputs when in focus */
+  input:focus {
+    border-color: #ff00ff; /* Change the border color on focus */
+  }
